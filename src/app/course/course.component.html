@@ -1,0 +1,47 @@
+<div>
+    <h1 class="navbar-brand" style="padding-left: 600px; color: #06384F; font-size:40px;">Course Listings</h1>
+</div>
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #A6E3EC">
+
+    <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button> -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <label for="search" class="col-sm-2 col-form-label" style="text-align:right;">Search</label>
+      <div class="col-sm-10">
+        <input class="form-control mr-sm-2 " type="text" name="CourseName"[(ngModel)]="searchValue"  placeholder="Search" aria-label="Search">
+      </div> 
+    </div>
+  </nav>
+ <div  style="width:100%">
+<table class="table table-bordered">
+    <thead style="background-color:#0B4952; color: wheat;">
+      <tr>
+        <th scope="col" style="white-space:nowrap">Course Id</th>
+        <th scope="col" >Course Name</th>
+        <th scope="col">Provider</th>
+        <th scope="col">Universities/Institutions</th>
+        <th scope="col" style="white-space:nowrap">Parent Subject</th>
+        <th scope="col">Child Subject</th>
+        <th scope="col" style="text-align: center;">Url</th>
+        <th scope="col" style="white-space:nowrap">Next Session Date</th>
+        <th scope="col">Length</th>
+        <th scope="col" style="text-align: center;">Video(Url)</th>
+      </tr>
+    </thead>
+    <tbody style="background-color:#A6E3EC">
+      <tr *ngFor="let item of collection | searchfilter: searchValue">
+        <th >{{item.Id}}</th>
+        <th>{{item.CourseName}}</th>
+        <th>{{item.Provider}}</th>
+        <th>{{item.Universities}}</th>
+        <th>{{item.ParentSubject}}</th>
+        <th>{{item.ChildSubject}}</th>
+        <th>{{item.Url}}</th>
+        <th>{{item.NextSessionDate}}</th>
+        <th>{{item.Length}}</th>
+        <th>{{item.Video_Url}}</th>
+      </tr>
+    </tbody>
+  </table>
+</div> 
